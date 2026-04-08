@@ -285,9 +285,6 @@ logger.error = (msg, options) => {
 }
 
 export default defineConfig({
-	optimizeDeps: {
-		include: allDeps,
-	},
 	customLogger: logger,
 	plugins: [
 		...(isDev ? [inlineEditPlugin(), editModeDevPlugin(), selectionModePlugin(), iframeRouteRestorationPlugin(), pocketbaseAuthPlugin()] : []),
@@ -309,13 +306,14 @@ export default defineConfig({
 		},
 	},
 	build: {
-		rollupOptions: {
-			external: [
-				'@babel/parser',
-				'@babel/traverse',
-				'@babel/generator',
-				'@babel/types'
-			]
-		}
-	}
+  outDir: 'dist',
+  rollupOptions: {
+    external: [
+      '@babel/parser',
+      '@babel/traverse',
+      '@babel/generator',
+      '@babel/types'
+    ]
+  }
+}
 });
