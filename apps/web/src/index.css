@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Bebas+Neue&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 120 3% 6%; /* #0e0f0e */
+    --foreground: 0 0% 98%;
+    
+    --card: 120 3% 9%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 120 3% 9%;
+    --popover-foreground: 0 0% 98%;
+    
+    /* FantaLega Brand Colors */
+    --fantalega-green: 135 85% 45%; 
+    
+    --primary: var(--fantalega-green);
+    --primary-foreground: 120 3% 6%;
+    
+    --secondary: 45 90% 61%; /* Gold/Accent #f5c842 */
+    --secondary-foreground: 120 3% 6%;
+    
+    --muted: 120 3% 15%;
+    --muted-foreground: 0 0% 65%;
+    
+    --accent: 45 90% 61%;
+    --accent-foreground: 120 3% 6%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: var(--fantalega-green);
+    --input: 120 3% 15%;
+    --ring: var(--fantalega-green);
+    
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 120 3% 6%;
+    --foreground: 0 0% 98%;
+    --card: 120 3% 9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 120 3% 9%;
+    --popover-foreground: 0 0% 98%;
+    
+    --fantalega-green: 135 85% 45%;
+    
+    --primary: var(--fantalega-green);
+    --primary-foreground: 120 3% 6%;
+    --secondary: 45 90% 61%;
+    --secondary-foreground: 120 3% 6%;
+    --muted: 120 3% 15%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 45 90% 61%;
+    --accent-foreground: 120 3% 6%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: var(--fantalega-green);
+    --input: 120 3% 15%;
+    --ring: var(--fantalega-green);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-primary/30 selection:text-primary;
+    font-family: 'Barlow', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.05em;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .glass-panel {
+    @apply bg-card/80 backdrop-blur-md border border-white/10 shadow-xl;
+  }
+  .animate-fade-up {
+    animation: fadeUp 0.5s ease-out forwards;
+  }
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .promo-banner {
+    @apply w-full max-w-[400px] rounded-2xl overflow-hidden border border-white/10 shadow-xl;
+  }
+  .promo-banner img {
+    @apply w-full h-auto object-contain;
+  }
+}

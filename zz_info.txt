@@ -1,0 +1,14 @@
+$env:PB_SUPERUSER_EMAIL="admin@fantacalcio.it"
+$env:PB_SUPERUSER_PASSWORD="Admin1234!"
+.\pocketbase.exe serve --http=0.0.0.0:8090
+
+
+cd D:\001_h-farm\Fantacalcio_Dev1\Fantacalcio\apps\pocketbase
+$env:PB_SUPERUSER_EMAIL="admin@fantacalcio.it"
+$env:PB_SUPERUSER_PASSWORD="Admin1234!"
+.\pocketbase.exe serve --http=localhost:8090
+
+cd D:\001_h-farm\Fantacalcio_Dev1\Fantacalcio\apps\web
+npm run dev
+
+D:\Fantacalcio_Dev1\Fantacalcio>
