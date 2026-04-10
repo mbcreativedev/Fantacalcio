@@ -12,3 +12,6 @@ cd D:\001_h-farm\Fantacalcio_Dev1\Fantacalcio\apps\web
 npm run dev
 
 D:\Fantacalcio_Dev1\Fantacalcio>
+
+
+girotto prova
