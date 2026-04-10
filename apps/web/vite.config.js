@@ -24,5 +24,11 @@ export default defineConfig({
         '@babel/types'
       ]
     }
+  },
+ server: {
+    allowedHosts: ['audiogirotto.it']
+  },
+  preview: {
+    allowedHosts: ['audiogirotto.it']
   }
 });
